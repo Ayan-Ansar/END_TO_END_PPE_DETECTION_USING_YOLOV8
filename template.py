@@ -26,6 +26,7 @@ list_of_files = [
     f"{projectName}/pipeline/training_pipeline.py",
     f"{projectName}/utils/__init__.py",
     f"{projectName}/utils/main_utils.py",
+    "research/.gitkeep"
     "templates/index.html",
     "app.py",
     "Dockerfile",
