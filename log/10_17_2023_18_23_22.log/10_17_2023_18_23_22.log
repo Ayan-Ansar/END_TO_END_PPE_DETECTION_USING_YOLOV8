@@ -1,0 +1,4 @@
+[ 2023-10-17 18:23:32,594 ] root - INFO - Entered the start_data_ingestion method of TrainPipeline class
+[ 2023-10-17 18:23:32,594 ] root - INFO - Getting the data from the url
+[ 2023-10-17 18:23:32,594 ] root - INFO - Entered initiate_data_ingestion method of Data_Ingestion class
+[ 2023-10-17 18:23:32,595 ] root - INFO - Download data from 'https://drive.google.com/file/d/1xkn87SRvjp9J7CVpp0y36vTOzRhRz_SE/view?usp=drive_link' into file artifacts\data_ingestion\data.zip

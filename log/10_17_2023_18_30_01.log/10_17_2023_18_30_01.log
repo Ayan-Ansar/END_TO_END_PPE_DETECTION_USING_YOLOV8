@@ -1,0 +1,18 @@
+[ 2023-10-17 18:30:08,844 ] root - INFO - Entered the start_data_ingestion method of TrainPipeline class
+[ 2023-10-17 18:30:08,844 ] root - INFO - Getting the data from the url
+[ 2023-10-17 18:30:08,844 ] root - INFO - Entered initiate_data_ingestion method of Data_Ingestion class
+[ 2023-10-17 18:30:08,844 ] root - INFO - Download data from 'https://drive.google.com/file/d/1xkn87SRvjp9J7CVpp0y36vTOzRhRz_SE/view?usp=drive_link' into file artifacts\data_ingestion\data.zip
+[ 2023-10-17 18:30:51,078 ] root - INFO - Download data from 'https://drive.google.com/file/d/1xkn87SRvjp9J7CVpp0y36vTOzRhRz_SE/view?usp=drive_link' into file artifacts\data_ingestion\data.zip
+[ 2023-10-17 18:30:58,322 ] root - INFO - Extracted artifacts\data_ingestion\data.zip into artifacts\data_ingestion\feature_store
+[ 2023-10-17 18:30:58,324 ] root - INFO - Exited initiate_data_ingestion method of Data_ingestion class
+[ 2023-10-17 18:30:58,324 ] root - INFO - data ingestion artificat: DataIngestionArtifact(data_zip_file_path='artifacts\\data_ingestion\\data.zip', feature_store_path='artifacts\\data_ingestion\\feature_store')
+[ 2023-10-17 18:30:58,324 ] root - INFO - Got the data from url
+[ 2023-10-17 18:30:58,324 ] root - INFO - Exited the start_data_ingestion method of the TrainPipeline class
+[ 2023-10-17 18:30:58,324 ] root - INFO - Entered the start_data_validation method of TrainPipeline class
+[ 2023-10-17 18:30:58,324 ] root - INFO - Entered initiated_data_validation method of DataValidation Class
+[ 2023-10-17 18:30:58,324 ] root - INFO - Exited initiate_data_validation method of DataValidation class
+[ 2023-10-17 18:30:58,324 ] root - INFO - Data Validation artifact: DataValidationArtifact(validation_status=True)
+[ 2023-10-17 18:30:59,144 ] root - INFO - Performed the data validation operation
+[ 2023-10-17 18:30:59,144 ] root - INFO - Exited the start_data_validation method of TrainPipeline class
+[ 2023-10-17 18:30:59,144 ] root - INFO - Initiated model training process
+[ 2023-10-17 18:30:59,144 ] root - INFO - Unzipping data.zip
