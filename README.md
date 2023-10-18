@@ -6,7 +6,8 @@ This repository contains the code and resources for a Safety Helmet and Safety J
 
 ## Training Results
 The model was trained for 30 epochs 
-![Training Results]('results.png')
+
+![Training Results]('/results.png')
 
 ## Getting Started
 
