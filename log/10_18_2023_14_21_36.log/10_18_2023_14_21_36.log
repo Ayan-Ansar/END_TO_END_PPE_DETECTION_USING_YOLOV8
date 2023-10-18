@@ -1,0 +1,47 @@
+[ 2023-10-18 14:21:42,274 ] werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.17:8080
+[ 2023-10-18 14:21:42,274 ] werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[ 2023-10-18 14:21:47,558 ] werkzeug - INFO - 127.0.0.1 - - [18/Oct/2023 14:21:47] "GET / HTTP/1.1" 200 -
+[ 2023-10-18 14:21:52,628 ] app - ERROR - Exception on /predict [POST]
+Traceback (most recent call last):
+  File "app.py", line 43, in predictRoute
+    model.predict(img_path, save=True)
+  File "C:\Users\ayana\miniconda3\envs\torch\lib\site-packages\torch\autograd\grad_mode.py", line 27, in decorate_context
+    return func(*args, **kwargs)
+  File "C:\Users\ayana\miniconda3\envs\torch\lib\site-packages\ultralytics\engine\model.py", line 246, in predict
+    return self.predictor.predict_cli(source=source) if is_cli else self.predictor(source=source, stream=stream)
+  File "C:\Users\ayana\miniconda3\envs\torch\lib\site-packages\ultralytics\engine\predictor.py", line 197, in __call__
+    return list(self.stream_inference(source, model, *args, **kwargs))  # merge list of Result into one
+  File "C:\Users\ayana\miniconda3\envs\torch\lib\site-packages\torch\autograd\grad_mode.py", line 43, in generator_context
+    response = gen.send(None)
+  File "C:\Users\ayana\miniconda3\envs\torch\lib\site-packages\ultralytics\engine\predictor.py", line 229, in stream_inference
+    self.setup_source(source if source is not None else self.args.source)
+  File "C:\Users\ayana\miniconda3\envs\torch\lib\site-packages\ultralytics\engine\predictor.py", line 210, in setup_source
+    self.dataset = load_inference_source(source=source, imgsz=self.imgsz, vid_stride=self.args.vid_stride)
+  File "C:\Users\ayana\miniconda3\envs\torch\lib\site-packages\ultralytics\data\build.py", line 165, in load_inference_source
+    dataset = LoadImages(source, imgsz=imgsz, vid_stride=vid_stride)
+  File "C:\Users\ayana\miniconda3\envs\torch\lib\site-packages\ultralytics\data\loaders.py", line 183, in __init__
+    raise FileNotFoundError(f'{p} does not exist')
+FileNotFoundError: /data/inputimage.jpg does not exist
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ayana\miniconda3\envs\torch\lib\site-packages\flask\app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ayana\miniconda3\envs\torch\lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ayana\miniconda3\envs\torch\lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ayana\miniconda3\envs\torch\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ayana\miniconda3\envs\torch\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\ayana\miniconda3\envs\torch\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "app.py", line 59, in predictRoute
+    AppException(e,)
+TypeError: __init__() missing 1 required positional argument: 'error_detail'
+[ 2023-10-18 14:21:52,632 ] werkzeug - INFO - 127.0.0.1 - - [18/Oct/2023 14:21:52] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
