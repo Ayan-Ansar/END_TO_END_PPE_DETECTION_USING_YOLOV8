@@ -52,4 +52,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 Thank you for using the Safety Helmet and Safety Jacket detection system! If you have any questions or need further assistance, feel free to reach out.
 
-**Maintained by [Your Name]**
+**Maintained by Ayan Ansar**
