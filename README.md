@@ -4,6 +4,10 @@
 
 This repository contains the code and resources for a Safety Helmet and Safety Jacket detection system using YOLOv8. The system is designed for use on construction sites to enhance safety by ensuring that workers are wearing appropriate safety gear.
 
+## Training Results
+The model was trained for 30 epochs 
+![Training Results]('results.png')
+
 ## Getting Started
 
 To get started with the Safety Helmet and Safety Jacket detection system, follow these steps:
