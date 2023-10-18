@@ -7,6 +7,8 @@ This repository contains the code and resources for a Safety Helmet and Safety J
 ## Training Results
 The model was trained for 30 epochs 
 
+mAP = 83.5%
+
 ![Training Results](results.png)
 
 ## Getting Started
