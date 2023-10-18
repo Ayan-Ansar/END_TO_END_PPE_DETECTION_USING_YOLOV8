@@ -7,3 +7,8 @@
 3. components
 4. pipelines 
 5. app.py 
+
+
+
+### URI
+745230317803.dkr.ecr.ap-south-1.amazonaws.com/ppedetection
