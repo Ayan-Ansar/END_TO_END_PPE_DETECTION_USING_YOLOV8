@@ -1,5 +1,0 @@
-[ 2023-10-18 14:23:34,755 ] werkzeug - WARNING -  * Debugger is active!
-[ 2023-10-18 14:23:34,755 ] werkzeug - INFO -  * Debugger PIN: 610-989-412
-[ 2023-10-18 14:23:34,784 ] werkzeug - INFO - 127.0.0.1 - - [18/Oct/2023 14:23:34] "GET / HTTP/1.1" 200 -
-[ 2023-10-18 14:23:39,300 ] werkzeug - INFO - 127.0.0.1 - - [18/Oct/2023 14:23:39] "POST /predict HTTP/1.1" 200 -
-[ 2023-10-18 14:23:56,325 ] werkzeug - INFO -  * Detected change in 'C:\\Ayan\\END_TO_END_PPE_DETECTION_USING_YOLOV8\\app.py', reloading
