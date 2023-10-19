@@ -32,9 +32,9 @@ To get started with the Safety Helmet and Safety Jacket detection system, follow
 4. **Access the Web Application:**
    Once the application is running, you can access it in your web browser by going to `http://localhost:8080`. You can upload images to test the safety gear detection.
 
-## Model Deployment on AWS
+## Web Application deployment on render
 
-The model for Safety Helmet and Safety Jacket detection has been deployed on Amazon Web Services (AWS) for scalability and accessibility. You can access the deployed model on AWS using the provided endpoint.
+The model for Safety Helmet and Safety Jacket detection has been deployed on Render for scalability and accessibility. You can access the deployed model on Render using the provided endpoint.
 
 ## Directory Structure
 
