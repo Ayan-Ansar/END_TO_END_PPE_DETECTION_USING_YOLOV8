@@ -11,11 +11,13 @@ import shutil
 app = Flask(__name__, template_folder='templates')
 CORS(app)
 
-
 class ClientApp:
     def __init__(self):
         self.filename = "inputimage.jpg"
-        
+       
+       
+clapp = ClientApp() 
+
 @app.route('/')
 def home():
     return render_template('index.html') 
@@ -38,23 +40,11 @@ def predictRoute():
         result = {'image': opencodedbase64.decode('utf-8')}
         
         shutil.rmtree('runs')
-        
-    except ValueError as val:
-        print(val)
-        return Response("Value not found inside json data") 
-
-    except KeyError:
-        return Response("Key value error Incorrec key passed")
+        return jsonify(result)
     
     except Exception as e:
-        print(e)
-        result = "Invalid Input"
-
-    return jsonify(result)
+        AppException(e,sys)
 
 
-
-if __name__ == '__main__':
-    clapp = ClientApp()
-    
-    app.run(host=APP_HOST, port=APP_PORT)        
+# if __name__ == '__main__':  
+#     app.run(APP_HOST, APP_PORT)        

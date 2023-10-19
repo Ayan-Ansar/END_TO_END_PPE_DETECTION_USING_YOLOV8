@@ -1,0 +1,10 @@
+[ 2023-10-19 22:24:26,989 ] werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.17:8080
+[ 2023-10-19 22:24:26,989 ] werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[ 2023-10-19 22:24:30,959 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 22:24:30] "GET / HTTP/1.1" 200 -
+[ 2023-10-19 22:24:30,972 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 22:24:30] "[33mGET /heroes.css HTTP/1.1[0m" 404 -
+[ 2023-10-19 22:24:31,211 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 22:24:31] "[36mGET /static/intro2.png HTTP/1.1[0m" 304 -
+[ 2023-10-19 22:24:31,280 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 22:24:31] "[36mGET /static/wepik-export-20231018195843EM2h.png HTTP/1.1[0m" 304 -
+[ 2023-10-19 22:24:41,169 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 22:24:41] "POST /predict HTTP/1.1" 200 -
