@@ -37,7 +37,7 @@ To get started with the Safety Helmet and Safety Jacket detection system, follow
 
 ## Web Application deployment on render
 
-The model for Safety Helmet and Safety Jacket detection has been deployed on Render for scalability and accessibility. You can access the deployed model on Render using the provided endpoint.
+The model for Safety Helmet and Safety Jacket detection has been deployed on Render for scalability and accessibility. You can access the deployed model on Render using the provided endpoint. [https://ppe-detection.onrender.com](https://ppe-detection.onrender.com)
 
 ## Directory Structure
 
