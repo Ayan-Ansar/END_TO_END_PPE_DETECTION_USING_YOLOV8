@@ -1,0 +1,11 @@
+[ 2023-10-19 17:41:16,862 ] werkzeug - WARNING -  * Debugger is active!
+[ 2023-10-19 17:41:16,863 ] werkzeug - INFO -  * Debugger PIN: 610-989-412
+[ 2023-10-19 17:41:27,667 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 17:41:27] "GET / HTTP/1.1" 200 -
+[ 2023-10-19 17:41:27,701 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 17:41:27] "[33mGET /heroes.css HTTP/1.1[0m" 404 -
+[ 2023-10-19 17:41:27,893 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 17:41:27] "[36mGET /static/intro2.png HTTP/1.1[0m" 304 -
+[ 2023-10-19 17:41:28,023 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 17:41:28] "[36mGET /static/wepik-export-20231018195843EM2h.png HTTP/1.1[0m" 304 -
+[ 2023-10-19 17:41:28,509 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 17:41:28] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[ 2023-10-19 17:41:52,271 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 17:41:52] "GET / HTTP/1.1" 200 -
+[ 2023-10-19 17:41:52,284 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 17:41:52] "[33mGET /heroes.css HTTP/1.1[0m" 404 -
+[ 2023-10-19 17:41:52,520 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 17:41:52] "[36mGET /static/intro2.png HTTP/1.1[0m" 304 -
+[ 2023-10-19 17:41:52,592 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 17:41:52] "[36mGET /static/wepik-export-20231018195843EM2h.png HTTP/1.1[0m" 304 -
