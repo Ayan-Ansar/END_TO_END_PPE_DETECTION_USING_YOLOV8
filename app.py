@@ -46,5 +46,5 @@ def predictRoute():
         AppException(e,sys)
 
 
-# if __name__ == '__main__':  
-#     app.run(APP_HOST, APP_PORT)        
+if __name__ == '__main__':  
+    app.run(APP_HOST, APP_PORT)        
