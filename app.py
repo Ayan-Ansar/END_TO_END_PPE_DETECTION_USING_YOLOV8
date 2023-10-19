@@ -57,4 +57,4 @@ def predictRoute():
 if __name__ == '__main__':
     clapp = ClientApp()
     
-    app.run(debug=True,host=APP_HOST, port=APP_PORT)        
+    app.run(host=APP_HOST, port=APP_PORT)        
