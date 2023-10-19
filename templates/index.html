@@ -1,351 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Web App</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title%}PPE Detection{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+      .image {
+        display: none;
+        object-fit: contain; 
+        width:500px; 
+        height:500px;
+        border-radius: 10px;
+        filter: blur(20px)
+      }
+      #loading {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 9999999999;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.7);
+      }
+      .image-margins-1 {
+        margin-top: -50px;
+        margin-left: 5px;
+      }
 
-		.iupload h3 {
-			color: #1b2d6b;
-			font-size: 30px;
-			font-weight: 700;
-		}
+      .image-margins-2 {
+        margin-top: -50px;
+        margin-left: 100px
+      }
 
-		.img-part-1 {
-			height: 300px;
-			width: 300px;
-			margin: 0px auto;
-		}
+      .button-margins-1 {
+        margin-left: 170px;
+      }
 
-		.image-part {
-			height: 300px;
-			width: 300px;
-			border: 1px solid #1b2d6b;
-		}
+      .button-margins-2 {
+        margin-left: 500px
+      }
 
-		.image-part img {
-			/* position: absolute; */
-			height: 300px;
-			width: 300px;
-			display: none;
-			padding: 5px;
-		}
+      .loader {
+        border: 8px solid #f3f3f3;
+        border-top: 8px solid #363e75;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        left: 50%;
+        margin-left: -4em;
+        display: block;
+        animation: spin 2s linear infinite;
+      }
 
-		.image-part #video {
-			/* display: block; */
-			height: 300px;
-			width: 300px;
-			padding: 5px;
-		}
+      .loader,
+      .loader:after {
+        display: block;
+        position: absolute;
+        top: 50%;
+        margin-top: -4.05em;
+      }
 
-		.res-part {
-			/* margin-left: 20px; */
-			height: 400px;
-			width: 100%;
-			padding: 5px;
-			margin: 0px auto;
-			overflow: auto;
-		}
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
 
-		.upload-image {
-			/* margin-left: 20px; */
-			height: 400px;
-			width: auto;;
-			padding: 5px;
-			margin: 0px auto;
-			overflow: auto;
-		}
+        100% {
+          transform: rotate(360deg);
+        }
+      }
 
-		.resp-img {
-			height: 400px;
-			width: auto;
-			margin: 0px auto;
-		}
+      .logo {
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        margin-right: 30px;
+        margin-bottom: 30px;
+      }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
 
-		.jsonRes {
-			margin-left: 30px;
-		}
+      .res-part {
+        /* margin-left: 20px; */
+        height: 400px;
+        width: 100%;
+        padding: 5px;
+        margin: 0px auto;
+        overflow: auto;
+      }
 
-		#send {
-			cursor: pointer;
-		}
 
-		.btn-part {
-			width: 325px;
-		}
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
 
-		textarea,
-		select,
-		.form-control,
-		.custom-select,
-		button.btn,
-		.btn-primary,
-		input[type="text"],
-		input[type="url"],
-		.uneditable-input {
-			border: 1px solid #363e75;
-			outline: 0 !important;
-			border-radius: 0px;
-			box-shadow: none;
-			-webkit-box-shadow: none;
-			-moz-box-shadow: none;
-			-moz-transition: none;
-			-webkit-transition: none;
-		}
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
 
-		textarea:focus,
-		select:focus,
-		.form-control:focus,
-		.btn:focus,
-		.btn-primary:focus,
-		.custom-select:focus,
-		input[type="text"]:focus,
-		.uneditable-input:focus {
-			border: 1px solid #007bff;
-			outline: 0 !important;
-			border-radius: 0px;
-			box-shadow: none;
-			-webkit-box-shadow: none;
-			-moz-box-shadow: none;
-			-moz-transition: none;
-			-webkit-transition: none;
-		}
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
 
-		#loading {
-			position: fixed;
-			left: 0px;
-			top: 0px;
-			width: 100%;
-			height: 100%;
-			z-index: 9999999999;
-			overflow: hidden;
-			background: rgba(255, 255, 255, 0.7);
-		}
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
 
-		.loader {
-			border: 8px solid #f3f3f3;
-			border-top: 8px solid #363e75;
-			border-radius: 50%;
-			width: 60px;
-			height: 60px;
-			left: 50%;
-			margin-left: -4em;
-			display: block;
-			animation: spin 2s linear infinite;
-		}
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+      #uploadImageButton,
+      #detectButton,
+      #imageContainer {
+          display: none;
+      }
 
-		.loader,
-		.loader:after {
-			display: block;
-			position: absolute;
-			top: 50%;
-			margin-top: -4.05em;
-		}
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
 
-		@keyframes spin {
-			0% {
-				transform: rotate(0deg);
-			}
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
 
-			100% {
-				transform: rotate(360deg);
-			}
-		}
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
 
-		.logo {
-			position: absolute;
-			right: 0px;
-			bottom: 0px;
-			margin-right: 30px;
-			margin-bottom: 30px;
-		}
-	</style>
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+    <link href="heroes.css" rel="stylesheet">
 </head>
-
 <body>
-	<!-- <div class="main container">
-		<section class="iupload">
-			<h3 class="text-center py-4">Object Detection Using TFOD</h3>
-			<div class="row">
-				<div class="img-part col-md-6">
-					<div class="image-part">
-						<video autoplay id="video"
-							poster="https://img.freepik.com/free-vector/group-young-people-posing-photo_52683-18824.jpg?size=338&ext=jpg"></video>
-						<img src="" id="photo">
-						<canvas style="display:none;" id="canvas"></canvas>
-					</div>
-				</div>
-				<div class="col-md-6 col-xs-12 right-part">
-					<h5 class="mb-2">
-						Prediction Results
-					</h5>
-					<div class="row">
-						<div class="res-part2 col-md-2 col-xs-12"></div>
-					</div>
-				</div>
-			</div>
-		</section>
+    <div class="row p-4 rounded-4 my-3 mx-auto d-flex align-items-center" style="max-width: 1500px; height: 550px;">
+      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+        <h1 class="display-4 fw-bold lh-1 text-body-emphasis">PPE Detection with YOLOv8</h1>
+        <p class="lead">This project addresses a critical use case in the construction industry, where safety is paramount. By implementing the Safety Helmet and Safety Jacket Detection system, we ensure that workers on construction sites are wearing the necessary personal protective equipment (PPE). This not only enhances safety and compliance with safety regulations but also reduces the need for labor-intensive manual inspections. The system offers real-time monitoring, improving workplace safety and operational efficiency.</p>
+        <div class="d-grid gap-3 d-md-flex justify-content-md-start mb-4 mb-lg-3 mt-4">
+          <button id="getPredictionsButton" type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Get Predictions</button>
+        </div>
+      </div>
+      <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg rounded-4 align-items-center">
+          <img class="rounded-lg-5" src="/static/intro2.png" alt="Intro Image" width="auto" height="auto">
+      </div>
+      <div class="col-lg-7 p-3 p-lg-5 d-flex align-items-center">
+          <div class="d-flex align-items-center">
+              <button id="uploadImageButton" type="button" class="btn btn-secondary btn-lg px-4 me-md-2 fw-bold button-margins-1">Upload Image</button>
+          </div>
+      </div>
+      <div class="col-lg-4 d-flex align-items-center justify-content-end">
+          <button id="detectButton" type="button" class="btn btn-success btn-lg px-5 me-md-2 fw-bold button-margins-2">Detect</button>
+      </div>
+      <div class="row rounded-4 mx-auto d-flex align-items-center">
+        <div class="col-lg-7 p-3 p-lg-5 d-flex align-items-center">
+          <div class="d-flex align-items-center">
+            <input type="file" id="fileInput" style="display: none;" accept="image/*">
+            <img id="placeholderImage" class="image image-margins-1" src="/static/wepik-export-20231018195843EM2h.png" alt="Placeholder Image">
+          </div>
+        </div>
+        <div class="col-lg-4 d-flex align-items-center">
+          <input type="hidden" class="form-control mr-2" id="url" placeholder="Enter REST Api url..." value="../predict" />
+          <img id="resultImage" class="image image-margins-2" src="" />
+        </div>
+      </div>
+    </div>
+    <div id="loading">
+      <div class="loader"></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script>  // Add an event listener to the "Get Predictions" button
+          document.getElementById("getPredictionsButton").addEventListener("click", function () {
+            // Hide the "Get Predictions" button
+            this.style.display = "none";
 
-		
-	</div> -->
+            // Show the "Upload Image" and "Detect" buttons
+            document.getElementById("uploadImageButton").style.display = "inline-block";
+            document.getElementById("detectButton").style.display = "inline-block";
+            document.getElementById('detectButton').disabled = true;
 
-	<!-- Header -->
-<header class="bg-primary text-center py-5 mb-4">
-	<div class="container">
-	  <h1 class="font-weight-light text-white">PPE Detection On Construction Sites</h1>
-	</div>
-  </header>
-  
-  <!-- Page Content -->
-  <div class="container">
+            // Show the image container
+            document.getElementById("placeholderImage").style.display = "block";
 
-	  
-	<form class="input-group upload-data row">	
-		<div class="col-xl-6 col-md-6 col-sm-6">
-		<button type="button" class="btn btn-primary col-12" id="uload">Upload</button>
-		</div>
-		<div class="col-xl-6 col-md-6 col-sm-6">
-			<button id="send" type="button" class="btn btn-success col-12">Predict</button>
-		</div>
+        });
 
-		<!-- change url value  -->
+        var myphoto = document.getElementById("placeholderImage");
+        var base_data = "";
 
-		<input type="hidden" class="form-control mr-2" id="url" placeholder="Enter REST Api url..." value="../predict" />
-		<input name="upload" type="file" id="fileinput" style="position:absolute;top:-500px; display: none;" /><br />
-	</form>
+        function sendRequest(base64Data) {
+          document.getElementById('resultImage').style.filter = "none";
+          document.getElementById('resultImage').style.display = 'block';
+          var type = "json";
+          if (base64Data != "" || base64Data != null) {
+            if (type == "imgtobase") {
+              $(".res-part").html("");
+              $(".res-part").html(base64Data);
+            } else if (type == "basetoimg") {
+              var imageData = $("#imgstring").val();
+              $(".res-part").html("");
+              $(".res-part").append(
+                "<img src='data:image/jpeg;base64," + imageData + "' alt='' />"
+              );
+            } else {
+              var url = $("#url").val();
+              $("#loading").show();
+              $.ajax({
+                url: url,
+                type: "post",
+                cache: false,
+                async: true,
+                crossDomain: true,
+                headers: {
+                  "Content-Type": "application/json",
+                  "Access-Control-Allow-Origin": "*",
+                },
+                data: JSON.stringify({
+                  image: base64Data,
+                }),
+                success: function (res) {
+                  var imageData = res.image;
+                  document.getElementById('resultImage').src = 'data:image/jpeg;base64,' + imageData;
+                  document.getElementById('resultImage').style.display = 'block';
+                  // $(".res-part").html("<pre>" + JSON.stringify(res[0], undefined, 2) + "</pre>");
+                  $("#loading").hide();
+                },
+              });
+            }
+          }
+        }
 
-	<div class="row">
-	  <!-- Team Member 1 -->
-	  <div class="col-xl-6 col-md-6 col-sm-6 mb-6">
-		<div class="card border-0 shadow upload-image ">
-		  <!-- <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="..."> -->
-		  	<video autoplay id="video" poster="https://img.freepik.com/free-vector/group-young-people-posing-photo_52683-18824.jpg?size=338&ext=jpg"></video>
-			<img src="" class="" id="photo">
-			<canvas style="display:none;" id="canvas"></canvas>
-		  <!-- <div class="card-body text-center">
-			<h5 class="card-title mb-0">Team Member</h5>
-		  </div> -->
-		</div>
-	  </div>
-	  <!-- Team Member 2 -->
-	  <div class="col-xl-6 col-md-6 col-sm-6 mb-6">
-		<div class="card border-0 shadow res-part2">
-		  <div class="card-body text-center">
-			<h5 class="card-title mb-0">Prediction Results</h5>
-		  </div>
-		</div>
-	  </div>
-	</div>
-	<!-- /.row -->
+        $(document).ready(function () {
+          $('#loading').hide();
 
-  
-  </div>
-  <!-- /.container -->
+          document.getElementById('detectButton').addEventListener('click', function (){
+            sendRequest(base_data);
+          })
 
-	<img class="logo"
-		src="https://apparel.ineuronvision.com/static/logo.png" />
-
-
-	<div id="loading">
-		<div class="loader"></div>
-	</div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-	</script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-	</script>
-
-	<script>
-		var mybtn = document.getElementById('startbtn');
-		var myvideo = document.getElementById('video');
-		var mycanvas = document.getElementById('canvas');
-		var myphoto = document.getElementById('photo');
-		var base_data = "";
-
-		function sendRequest(base64Data) {
-			var type = "json";
-			if (base64Data != "" || base64Data != null) {
-				if (type == "imgtobase") {
-					$(".res-part").html("");
-					$(".res-part").html(base64Data);
-				} else if (type == "basetoimg") {
-					var imageData = $("#imgstring").val();
-					$(".res-part").html("");
-					$(".res-part").append("<img src='data:image/jpeg;base64," + imageData + "' alt='' />");
-				} else {
-					var url = $("#url").val();
-					$("#loading").show();
-					$.ajax({
-						url: url,
-						type: "post",
-						cache: false,
-						async: true,
-						crossDomain: true,
-						headers: {
-							'Content-Type': 'application/json',
-							'Access-Control-Allow-Origin': '*'
-						},
-						data: JSON.stringify({
-							image: base64Data
-						}),
-						success: function (res) {
-							$(".res-part").html("");
-							$(".res-part2").html("");
-							var imageData = res.image;
-							$(".res-part2").append("<img class='resp-img' src='data:image/jpeg;base64," +
-								imageData + "' alt='' />");
-							// $(".res-part").html("<pre>" + JSON.stringify(res[0], undefined, 2) + "</pre>");
-							$("#loading").hide();
-						}
-					});
-				}
-			}
-		}
-
-		$(document).ready(function () {
-			$("#loading").hide();
-
-			$('#send').click(function (evt) {
-				sendRequest(base_data);
-			});
-
-			$('#uload').click(function (evt) {
-				$('#fileinput').focus().trigger('click');
-			});
-			$("#fileinput").change(function () {
-				if (this.files && this.files[0]) {
-					var reader = new FileReader();
-					reader.onload = function (e) {
-						var url = e.target.result;
-						var img = new Image();
-						img.crossOrigin = 'Anonymous';
-						img.onload = function () {
-							var canvas = document.createElement('CANVAS');
-							var ctx = canvas.getContext('2d');
-							canvas.height = this.height;
-							canvas.width = this.width;
-							ctx.drawImage(this, 0, 0);
-							base_data = canvas.toDataURL('image/jpeg', 1.0).replace(
-								/^data:image.+;base64,/, '');
-							canvas = null;
-						};
-						img.src = url;
-						$('#photo').attr('src', url);
-						$('#photo').show();
-						$('#video').hide();
-					}
-					reader.readAsDataURL(this.files[0]);
-				}
-			});
-		});
-	</script>
-</body>
-
+          document.getElementById('uploadImageButton').addEventListener('click', function (evt) {
+            $("#fileInput").focus().trigger("click");
+          });
+          $("#fileInput").change(function () {
+            if (this.files && this.files[0]) {
+              var reader = new FileReader();
+              reader.onload = function (e) {
+                var url = e.target.result;
+                var img = new Image();
+                img.crossOrigin = "Anonymous";
+                img.onload = function () {
+                  var canvas = document.createElement("CANVAS");
+                  var ctx = canvas.getContext("2d");
+                  canvas.height = this.height;
+                  canvas.width = this.width;
+                  ctx.drawImage(this, 0, 0);
+                  base_data = canvas
+                    .toDataURL("image/jpeg", 1.0)
+                    .replace(/^data:image.+;base64,/, "");
+                  canvas = null;
+                };
+                img.src = url;
+                document.getElementById('placeholderImage').style.filter = "none"; 
+                $("#placeholderImage").attr("src", url);
+                $("#placeholderImage").show();
+                //$("#video").hide();
+              };
+              reader.readAsDataURL(this.files[0]);
+            }
+            document.getElementById("detectButton").disabled = false;
+          });
+        });
+      </script>
+  </body>
 </html>

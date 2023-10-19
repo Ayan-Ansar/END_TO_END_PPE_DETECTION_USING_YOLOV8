@@ -1,0 +1,27 @@
+[ 2023-10-19 13:21:15,061 ] werkzeug - WARNING -  * Debugger is active!
+[ 2023-10-19 13:21:15,083 ] werkzeug - INFO -  * Debugger PIN: 610-989-412
+[ 2023-10-19 13:21:37,983 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 13:21:37] "GET / HTTP/1.1" 200 -
+[ 2023-10-19 13:21:38,018 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 13:21:38] "[33mGET /heroes.css HTTP/1.1[0m" 404 -
+[ 2023-10-19 13:21:38,248 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 13:21:38] "GET /static/intro2.png HTTP/1.1" 200 -
+[ 2023-10-19 13:21:38,342 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 13:21:38] "GET /static/wepik-export-20231018195843EM2h.png HTTP/1.1" 200 -
+[ 2023-10-19 13:21:38,910 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 13:21:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[ 2023-10-19 13:25:56,699 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 13:25:56] "GET / HTTP/1.1" 200 -
+[ 2023-10-19 13:25:56,715 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 13:25:56] "[33mGET /heroes.css HTTP/1.1[0m" 404 -
+[ 2023-10-19 13:25:56,933 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 13:25:56] "[36mGET /static/intro2.png HTTP/1.1[0m" 304 -
+[ 2023-10-19 13:25:57,030 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 13:25:57] "[36mGET /static/wepik-export-20231018195843EM2h.png HTTP/1.1[0m" 304 -
+[ 2023-10-19 13:26:58,390 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 13:26:58] "GET / HTTP/1.1" 200 -
+[ 2023-10-19 13:26:58,406 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 13:26:58] "[33mGET /heroes.css HTTP/1.1[0m" 404 -
+[ 2023-10-19 13:26:58,628 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 13:26:58] "[36mGET /static/intro2.png HTTP/1.1[0m" 304 -
+[ 2023-10-19 13:26:58,722 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 13:26:58] "[36mGET /static/wepik-export-20231018195843EM2h.png HTTP/1.1[0m" 304 -
+[ 2023-10-19 13:29:07,992 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 13:29:07] "GET / HTTP/1.1" 200 -
+[ 2023-10-19 13:29:08,006 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 13:29:08] "[33mGET /heroes.css HTTP/1.1[0m" 404 -
+[ 2023-10-19 13:29:08,227 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 13:29:08] "[36mGET /static/intro2.png HTTP/1.1[0m" 304 -
+[ 2023-10-19 13:29:08,321 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 13:29:08] "[36mGET /static/wepik-export-20231018195843EM2h.png HTTP/1.1[0m" 304 -
+[ 2023-10-19 13:39:18,232 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 13:39:18] "GET / HTTP/1.1" 200 -
+[ 2023-10-19 13:39:18,248 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 13:39:18] "[33mGET /heroes.css HTTP/1.1[0m" 404 -
+[ 2023-10-19 13:39:18,467 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 13:39:18] "[36mGET /static/intro2.png HTTP/1.1[0m" 304 -
+[ 2023-10-19 13:39:18,563 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 13:39:18] "[36mGET /static/wepik-export-20231018195843EM2h.png HTTP/1.1[0m" 304 -
+[ 2023-10-19 13:41:42,243 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 13:41:42] "GET / HTTP/1.1" 200 -
+[ 2023-10-19 13:41:42,260 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 13:41:42] "[33mGET /heroes.css HTTP/1.1[0m" 404 -
+[ 2023-10-19 13:41:42,495 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 13:41:42] "[36mGET /static/intro2.png HTTP/1.1[0m" 304 -
+[ 2023-10-19 13:41:42,570 ] werkzeug - INFO - 127.0.0.1 - - [19/Oct/2023 13:41:42] "[36mGET /static/wepik-export-20231018195843EM2h.png HTTP/1.1[0m" 304 -

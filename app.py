@@ -16,15 +16,6 @@ class ClientApp:
     def __init__(self):
         self.filename = "inputimage.jpg"
         
-
-@app.route('/train')
-def trainrout():
-    obj = TrainPipeline()
-    obj.run_pipeline()
-    
-    return "Training Successfull"
-
-
 @app.route('/')
 def home():
     return render_template('index.html') 
