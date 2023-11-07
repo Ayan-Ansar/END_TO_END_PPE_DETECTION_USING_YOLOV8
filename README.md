@@ -17,7 +17,7 @@ To get started with the Safety Helmet and Safety Jacket detection system, follow
 
 1. **Clone the Repository:** 
    ```
-   git clone https://github.com/yourusername/ppeDetection.git
+   git clone https://github.com/Ayan-Ansar/END_TO_END_PPE_DETECTION_USING_YOLOV8.git
    ```
 
 2. **Install Dependencies:**
